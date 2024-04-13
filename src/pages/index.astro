@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Presentacion from '../components/Presentacion.astro';
+import Experience from '../components/Experience.astro';
+import Certificate from '../components/Certificate.astro';
+import About from '../components/About.astro';
+---
+
+<Layout title="Portfolio Tomás Bozzano - Desarrollador, Programador y Analista de sistemas"
+description="Contrata a Tomás para crear tu aplicación web. Especializado en crear aplicaciones unicas">
+	<main>
+		<section class="w-full mx-auto max-w-[60ch] pt-14 pb-10 px-4">
+			<Presentacion />
+		</section>
+		<section>
+			<Experience />
+		</section>
+		<section>
+			<Certificate />
+		</section>
+		<section>
+			<About />
+		</section>
+	</main>
+</Layout>

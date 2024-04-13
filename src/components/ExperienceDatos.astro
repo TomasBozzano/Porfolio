@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+    {
+        date: "2022 - 2023",
+        company: "Wynges S.A.S",
+        description:
+            "Desarrollo de soluciones técnicas y soporte al cliente. Implementación de sistemas de gestión. Metodologías ágiles y trabajo en equipo.",
+        link: "https://wynges.com/",
+    },
+    {
+        date: "2017 - 2021",
+        company: "El juninense",
+        description:
+            "Integración de un equipo de trabajo en el área de ventas y atención al cliente. contabilidad y finanzas. Marketing digital y redes sociales.",
+        link: "https://www.instagram.com/eljuninense_carniceria/",
+    },
+    {
+        date: "2015",
+        company: "Milo S.A",
+        description:
+            "Administración general con rol en el área de contabilidad y finanzas. Utilización de herramientas de gestión y control de stock especificos de la planta.",
+        link: "https://miloagronegocios.com/",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-70">
+    {
+        EXPERIENCIE.map((experiencie) => (
+            <li class="ml-7 mb-10 ms-4 text-pretty">
+                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                </div>
+                <ExperienceItem {...experiencie} />
+            </li>
+        ))
+    }
+</ol>

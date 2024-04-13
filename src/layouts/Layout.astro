@@ -1,0 +1,41 @@
+---
+import Header from '../components/Header.astro'
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/certificate.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<footer class="py-12 text-center">
+			© 2024 Tomgb. Casi todos los derechos reservados
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+	body{
+		scroll-behavior: smooth;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		body {
+			scroll-behavior: auto;
+		}
+	}
+</style>

@@ -1,0 +1,59 @@
+---
+import Code from './icons/Code.astro'
+import View from './icons/View.astro'
+import Github from './icons/Github.astro'
+import Html from './icons/Html.astro'
+import Css from './icons/Css.astro'
+import Javascript from './icons/Javascript.astro'
+---
+<section id="proyectos" class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
+    <h2 class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center">
+        <Code class="size-10" />
+        Proyectos
+    </h2>
+    <ol class="">
+        <li class="ml-7 mb-10 ms-4 text-pretty">
+            <h3
+                class="text-lg font-semibold text-cyan-500"
+                data-astro-cid-p7b4wqop=""
+            >
+                Weather APP
+            </h3>
+            <p class="mb-4 text-base font-normal" data-astro-cid-p7b4wqop="">
+                   Desarrollo de aplicación web para consultar el clima de cualquier ciudad del mundo.
+            </p>
+            <ul class="flex flex-row mb-2 gap-x-2 items-center py-2"> 
+                <li> 
+                    <span class="flex gap-x-2 rounded-full bg-orange-600 text-black py-1 px-3 ">
+                        <Html class="size-6" />
+                        HTML
+                </li>
+                <li> 
+                        <span class="flex gap-x-2 rounded-full bg-sky-500 text-black py-1 px-3 ">
+                        <Css class="size-6" />
+                        CSS
+                </li>
+                <li> 
+                    <span class="flex gap-x-2 rounded-full bg-yellow-500 text-black py-1 px-3 ">
+                        <Javascript class="size-6" />
+                        JavaScript
+                </li>
+            </ul>
+            <a
+                href="https://tomgb-weather.zeabur.app/"
+                class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                target="_blank"
+                >
+                <View class="size-6" />
+                Preview
+            </a>
+            <a
+                href="https://tomgb-weather.zeabur.app/"
+                class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                target="_blank">
+                <Github class="size-6" />
+                Github
+            </a>
+        </li>
+    </ol>
+</section>
