@@ -10,12 +10,12 @@ interface Props {
 const { company, description, link, date } = Astro.props;
 ---
 
-<time class="mb-1 text-sm font-normal leading-none">{date}</time>
+<time class="mb-1 text-sm font-normal leading-none dark:text-white">{date}</time>
 <h3 class="text-lg font-semibold text-cyan-500">{company}</h3>
-<p class="mb-4 text-base font-normal">{description}</p>
+<p class="mb-4 text-base font-normal dark:text-white">{description}</p>
 <a
     href={link}
-    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-lg hover:bg-cyan-500 hover:text-white focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:focus:ring-gray-700"
     target="_blank"
     >Sobre la empresa
     <Go class="w-3 h-3 ms-2 rtl:rotate-180" />
