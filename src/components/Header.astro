@@ -49,6 +49,8 @@ const navItems = [
     darkmode.addEventListener('click' , () => {
         document.documentElement.classList.toggle('dark'); 
     });
+</script>
+<script>
     document.addEventListener("astro:page-load", () => {
         const sections = document.querySelectorAll("section");
         const navItems = document.querySelectorAll("header nav a");
