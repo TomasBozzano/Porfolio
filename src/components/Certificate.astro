@@ -5,6 +5,26 @@ import Github from './icons/Github.astro'
 import Html from './icons/Html.astro'
 import Css from './icons/Css.astro'
 import Javascript from './icons/Javascript.astro'
+import React from './icons/React.astro'
+
+const PROYECTOS = [
+    {
+        name: "Weather APP",
+        description:
+            "Desarrollo de aplicación web para consultar el clima de cualquier ciudad del mundo.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        preview: "https://tomgb-weather.zeabur.app/",
+        github: "https://github.com/TomasBozzano/WeatherTime"
+    },
+    {
+        name: "Calculadora",
+        description:
+            "Desarrollo de aplicación web para realizar operaciones matemáticas básicas.",
+        technologies: ["HTML", "CSS", "JavaScript", "React"],
+        preview: "https://calculadoratg.onrender.com/",
+        github: "https://github.com/TomasBozzano/Calculadora-useState/tree/main"
+    }
+];
 ---
 <section id="proyectos" class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
     <h2 class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white">
@@ -12,47 +32,53 @@ import Javascript from './icons/Javascript.astro'
         Proyectos
     </h2>
     <ol class="">
-        <li class="ml-7 mb-10 ms-4 text-pretty">
-            <h3
-                class="text-lg font-semibold text-cyan-500"
-            >
-                Weather APP
-            </h3>
-            <p class="mb-4 text-base font-normal dark:text-white">
-                   Desarrollo de aplicación web para consultar el clima de cualquier ciudad del mundo.
-            </p>
-            <ul class="flex flex-row mb-2 gap-x-2 items-center py-2"> 
-                <li> 
-                    <span class="flex gap-x-2 rounded-full bg-orange-600 text-black py-1 px-3 ">
-                        <Html class="size-6" />
-                        HTML
-                </li>
-                <li> 
-                        <span class="flex gap-x-2 rounded-full bg-sky-500 text-black py-1 px-3 ">
-                        <Css class="size-6" />
-                        CSS
-                </li>
-                <li> 
-                    <span class="flex gap-x-2 rounded-full bg-yellow-500 text-black py-1 px-3 ">
-                        <Javascript class="size-6" />
-                        JavaScript
-                </li>
-            </ul>
-            <a
-                href="https://tomgb-weather.zeabur.app/"
-                class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-                target="_blank"
-                >
-                <View class="size-6" />
-                Preview
-            </a>
-            <a
-                href="https://github.com/TomasBozzano/WeatherTime"
-                class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base   text-md group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-                target="_blank">
-                <Github class="size-6" />
-                Github
-            </a>
-        </li>
+        {
+            PROYECTOS.map((proyecto) => {
+                return (
+                    <li class="ml-7 mb-10 ms-4 text-pretty">
+                        <h3
+                            class="text-lg font-semibold text-cyan-500"
+                        >
+                            {proyecto.name}
+                        </h3>
+                        <p class="mb-4 text-base font-normal dark:text-white">
+                            {proyecto.description}
+                        </p>
+                        <ul class="flex flex-row mb-2 gap-x-2 items-center py-2">
+                            {
+                                proyecto.technologies.map((tech) => {
+                                    return (
+                                        <li>
+                                            <span class="flex gap-x-2 rounded-full bg-gray-100 text-black py-1 px-3 dark:bg-gray-700">
+                                                {tech === "HTML" ? <Html class="size-6" name="HTML" /> : ""}
+                                                {tech === "CSS" ? <Css class="size-6" /> : ""}
+                                                {tech === "JavaScript" ? <Javascript class="size-6" /> : ""}
+                                                {tech === "React" ? <React class="size-6" /> : ""}
+                                            </span>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        <a
+                            href={proyecto.preview}
+                            class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                            target="_blank"
+                            >
+                            <View class="size-6" />
+                            Preview
+                        </a>
+                        <a
+                            href={proyecto.github}
+                            class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base   text-md group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                            target="_blank">
+                            <Github class="size-6" />
+                            Github
+                        </a>
+                    </li>
+                )
+            })
+
+        }
     </ol>
 </section>
