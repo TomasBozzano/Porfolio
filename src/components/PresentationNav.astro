@@ -2,6 +2,7 @@
 import Mail from './icons/Mail.astro'
 import LinkedIn from './icons/Linkedin.astro'
 import Github from './icons/Github.astro'
+import Download from './icons/Download.astro'
 
 ---
     <nav class="flex flex-wrap gap-x-3 gap-y-1 py-10">
@@ -35,4 +36,15 @@ import Github from './icons/Github.astro'
         <Github class="size-6"/>
             Git hub
         </a>
+        <a
+            href="/Bozzano Tomas-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="link"
+            class="inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition dark:bg-gray-100 border dark:border-gray-300 rounded-full bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+        >
+            <Download class="size-6"/>
+            CV
+        </a>
+
     </nav>
