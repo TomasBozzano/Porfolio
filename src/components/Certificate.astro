@@ -9,6 +9,13 @@ import React from './icons/React.astro'
 
 const PROYECTOS = [
     {
+        name: "E-commerce",
+        description: "Desarrollo de E-commerce con Vanilla JavaScript, HTML y CSS. Aplicando conceptos de Responsive Design y accesibilidad.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        preview: "https://tomasbozzano.github.io/Front-End/",
+        github: "https://github.com/TomasBozzano/Front-End"
+    },
+    {
         name: "Ta Te Ti",
         description:
             "Desarrollo de Juego para manejar Hooks en React, aplicando Localstore para el almacenado de datos de la partida de juego.",
@@ -57,7 +64,7 @@ const PROYECTOS = [
                                 proyecto.technologies.map((tech) => {
                                     return (
                                         <li>
-                                            <span class="flex gap-x-2 rounded-full bg-gray-700 text-black py-1 px-3 dark:bg-gray-100">
+                                            <span class="flex gap-x-2 text-black px-1">
                                                 {tech === "HTML" ? <Html class="size-6" name="HTML" /> : ""}
                                                 {tech === "CSS" ? <Css class="size-6" /> : ""}
                                                 {tech === "JavaScript" ? <Javascript class="size-6" /> : ""}
