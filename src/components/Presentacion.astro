@@ -1,5 +1,8 @@
 ---
 import PresentationNav from "./PresentationNav.astro"
+let years = new Date().getFullYear();
+const experiencie = 2022
+let timeLine = years - experiencie;
 ---
 <section id="inicio"
     class="section py-10 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
@@ -15,12 +18,10 @@ import PresentationNav from "./PresentationNav.astro"
         </h1>
     </div>
     <p class="max-w-[60ch] text-pretty dark:text-white">
-        Esta es mi página personal, o porfolio, que iré actualizando. Soy
-        Analista - Desarrollador de sistemas. Me he desarrollado de manera
-        academica y actualmente me encuentro estudiando una
-        <span class="text-cyan-500">Licenciatura en Tecnologías Digitales</span
-        >. Soy un desarrolador con ganas de emprender en nuevos
-        desafios.
+        Desarrollador FullStack y Estudiate de
+        <span class="text-cyan-500">Licenciatura en Tecnologías Digitales</span>.
+        <br/>
+        <span class="text-yellow-500 text-2xl ">+{timeLine}</span> de experiencia en desarrollo de software.
     </p>
     <PresentationNav />    
 </section>
