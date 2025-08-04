@@ -1,0 +1,66 @@
+---
+import Code from "./icons/Code.astro";
+import CssI from "./icons/Css-I.astro";
+import HtmlI from "./icons/Html-i.astro";
+import JavascriptI from "./icons/Javascript-i.astro";
+import ReactI from "./icons/React-ic.astro";
+import NodeJs from "./icons/NodeJs.astro";
+import Express from "./icons/Express.astro";
+import Git from "./icons/Git.astro";
+import GitLab from "./icons/GitLab.astro";
+import DotEnv from "./icons/DotEnv.astro";
+import AstroI from "./icons/Astro-img.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Swagger from "./icons/Swagger.astro";
+
+const TECHNOLOGIES = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Node.js",
+  "Express",
+  ".env",
+  "GitHub",
+  "Astro",
+  "Tailwind CSS",
+  "Swagger",
+  "GitLab",
+  // Add more technologies as needed
+];
+---
+
+<article class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
+  <h2
+    class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
+  >
+    <Code class="size-10" />
+    Tecnologías y habilidades
+  </h2>
+  <div class="max-w-[60ch] text-pretty dark:text-white flex flex-wrap gap-6 justify-center">
+    {
+      //traer todas las imagenes de icons
+      //y mostrarlas como una lista de iconos
+      //con un tooltip que diga el nombre de la tecnologia
+      TECHNOLOGIES.map((tech) => (
+        <span
+          class="flex justify-center flex-col items-center gap-x-2 text-black p-4 bg-gray-700 rounded-lg shadow-md dark:bg-gray-800 "
+          title={tech}
+        >
+          {tech === "HTML" ? <HtmlI class="size-20" name="HTML" /> : ""}
+          {tech === "Astro" ? <AstroI class="size-20" name="Astro" /> : ""}
+          {tech === "CSS" ? <CssI class="size-20" name="CSS" /> : ""}
+          {tech === "Tailwind CSS" ? <Tailwind class="size-20" name="Tailwind CSS" /> : ""}
+          {tech === "JavaScript" ? <JavascriptI class="size-20" name="JavaScript" /> : ""}
+          {tech === "React" ? <ReactI class="size-20" name="React" /> : ""}
+          {tech === "Node.js" ? <NodeJs class="size-20" name="Node.js" /> : ""}
+          {tech === ".env" ? <DotEnv class="size-20" name="DotEnv" /> : ""}
+          {tech === "Swagger" ? <Swagger class="size-20" name="Swagger" /> : ""}
+          {tech === "Express" ? <Express class="size-20" name="Express" /> : ""}
+          {tech === "GitHub" ? <Git class="size-20" name="GitHub" /> : ""}
+          {tech === "GitLab" ? <GitLab class="size-20" name="GitLab" /> : ""}
+        </span>
+      ))
+    }
+  </div>
+</article>
