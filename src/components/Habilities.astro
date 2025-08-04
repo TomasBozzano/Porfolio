@@ -12,11 +12,13 @@ import DotEnv from "./icons/DotEnv.astro";
 import AstroI from "./icons/Astro-img.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Swagger from "./icons/Swagger.astro";
+import Java from "./icons/Java.astro";
 
 const TECHNOLOGIES = [
   "HTML",
   "CSS",
   "JavaScript",
+  "Java",
   "React",
   "Node.js",
   "Express",
@@ -35,7 +37,7 @@ const TECHNOLOGIES = [
     class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
   >
     <Code class="size-10" />
-    Tecnologías y habilidades
+    Tecnologías
   </h2>
   <div class="max-w-[60ch] text-pretty dark:text-white flex flex-wrap gap-6 justify-center">
     {
@@ -52,6 +54,7 @@ const TECHNOLOGIES = [
           {tech === "CSS" ? <CssI class="size-20" name="CSS" /> : ""}
           {tech === "Tailwind CSS" ? <Tailwind class="size-20" name="Tailwind CSS" /> : ""}
           {tech === "JavaScript" ? <JavascriptI class="size-20" name="JavaScript" /> : ""}
+          {tech === "Java" ? <Java class="size-20" name="Java" /> : ""}
           {tech === "React" ? <ReactI class="size-20" name="React" /> : ""}
           {tech === "Node.js" ? <NodeJs class="size-20" name="Node.js" /> : ""}
           {tech === ".env" ? <DotEnv class="size-20" name="DotEnv" /> : ""}
