@@ -9,13 +9,6 @@ import React from './icons/React.astro'
 
 const PROYECTOS = [
     {
-        name: "E-commerce",
-        description: "Desarrollo de E-commerce con Vanilla JavaScript, HTML y CSS. Aplicando conceptos de Responsive Design y accesibilidad.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        preview: "https://tomasbozzano.github.io/Front-End/",
-        github: "https://github.com/TomasBozzano/Front-End"
-    },
-    {
         name: "Ta Te Ti",
         description:
             "Desarrollo de Juego para manejar Hooks en React, aplicando Localstore para el almacenado de datos de la partida de juego.",
@@ -32,6 +25,17 @@ const PROYECTOS = [
         github: "https://github.com/TomasBozzano/Calculadora-useState"
     },
     {
+        name: "E-commerce",
+        description: "Desarrollo de E-commerce con Vanilla JavaScript, HTML y CSS. Aplicando conceptos de Responsive Design y accesibilidad.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        preview: "https://tomasbozzano.github.io/Front-End/",
+        github: "https://github.com/TomasBozzano/Front-End"
+    },
+];
+
+/**
+ * ---
+{
         name: "Weather APP",
         description:
             "Desarrollo de aplicación web para consultar el clima de cualquier ciudad del mundo, utilizando una API publica.",
@@ -39,7 +43,9 @@ const PROYECTOS = [
         preview: "https://tomgb-weather.zeabur.app/",
         github: "https://github.com/TomasBozzano/WeatherTime"
     }
-];
+    ---
+ */
+
 ---
 <article id="proyectos" class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
     <h2 class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white">
