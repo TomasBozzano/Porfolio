@@ -25,7 +25,7 @@ const TECHNOLOGIES = [
   ".env",
   "GitHub",
   "Astro",
-  "Tailwind CSS",
+  "Tailwind",
   "Swagger",
   "GitLab",
   // Add more technologies as needed
@@ -33,27 +33,36 @@ const TECHNOLOGIES = [
 ---
 
 <article class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
-  <h2
-    class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
-  >
+  <div class="flex flex-row pb-5 gap-x-3">
     <Code class="size-10" />
-    Tecnologías
-  </h2>
-  <div class="max-w-[60ch] text-pretty dark:text-white flex flex-wrap gap-6 justify-center">
+    <h2
+      class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
+      id="habilities">
+    </h2>
+  </div>
+  <div class="w-full mx-auto max-w-[60ch] ml-4 flex flex-wrap gap-6">
     {
       //traer todas las imagenes de icons
       //y mostrarlas como una lista de iconos
       //con un tooltip que diga el nombre de la tecnologia
       TECHNOLOGIES.map((tech) => (
         <span
-          class="flex justify-center flex-col items-center gap-x-2 text-black p-4 bg-gray-700 rounded-lg shadow-md dark:bg-gray-800 "
+          class="flex justify-center flex-col items-center gap-x-2 text-white p-2 bg-gray-700 rounded-lg shadow-md dark:bg-gray-800 "
           title={tech}
         >
           {tech === "HTML" ? <HtmlI class="size-20" name="HTML" /> : ""}
           {tech === "Astro" ? <AstroI class="size-20" name="Astro" /> : ""}
           {tech === "CSS" ? <CssI class="size-20" name="CSS" /> : ""}
-          {tech === "Tailwind CSS" ? <Tailwind class="size-20" name="Tailwind CSS" /> : ""}
-          {tech === "JavaScript" ? <JavascriptI class="size-20" name="JavaScript" /> : ""}
+          {tech === "Tailwind" ? (
+            <Tailwind class="size-20" name="Tailwind CSS" />
+          ) : (
+            ""
+          )}
+          {tech === "JavaScript" ? (
+            <JavascriptI class="size-20" name="JavaScript" />
+          ) : (
+            ""
+          )}
           {tech === "Java" ? <Java class="size-20" name="Java" /> : ""}
           {tech === "React" ? <ReactI class="size-20" name="React" /> : ""}
           {tech === "Node.js" ? <NodeJs class="size-20" name="Node.js" /> : ""}
@@ -62,8 +71,26 @@ const TECHNOLOGIES = [
           {tech === "Express" ? <Express class="size-20" name="Express" /> : ""}
           {tech === "GitHub" ? <Git class="size-20" name="GitHub" /> : ""}
           {tech === "GitLab" ? <GitLab class="size-20" name="GitLab" /> : ""}
+          {tech}
         </span>
       ))
     }
   </div>
 </article>
+<script>
+  async function render() {
+    let habilities = document.getElementById("habilities");
+
+    const lang = document.documentElement.lang.toUpperCase();
+    const data = (
+      await import(`../utils/data.json`, {
+        assert: { type: "json" },
+      })
+    ).default;
+
+    habilities.textContent = data[lang].titles.habilities;
+  }
+
+  render();
+  window.addEventListener("language-change", render);
+</script>

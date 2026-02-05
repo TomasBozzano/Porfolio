@@ -1,49 +1,69 @@
----
-import { date } from "astro/zod";
-import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCIE = [
-    {
-        date: "2025 - Actualidad",
-        company: "Municipalidad de Vicente López",
-        description: "Participación en diseño, desarrollo e implementación de aplicaciones web orientadas a la gestión de datos y automatización de procesos. Entorno FullStack, con foco en la calidad del código, rendimiento y UX.",
-        link: "https://www.vicentelopez.gov.ar/",
-    },
-    {
-        date: "2024 - 2025",
-        company: "Rusoft",
-        description: "Desarrollo de Sistema de Fidelización de Clientes enfocado en soluciones escalables, seguras y eficientes, con una comunicación ágil a través de una plataforma de seguimiento continuo de tareas y estados del proyecto.",
-        link:"http://rusoft.com.ar/",
-    },
-    {
-        date: "2023 - 2024",
-        company: "Toda Linda Ropa",
-        description: "Análisis y creación de ERP para tienda de ropa. Implementación de requerimientos de negocio y buenas prácticas, integrando la información a través de procedimientos almacenados.",
-        link: "https://www.instagram.com/todalindavyg/",
-    },
-    {
-        date: "2023 -2024",
-        company: "ISFDyT N°20",
-        description: "Cumplimiento de soluciones de software alineadas a especificaciones y mejores prácticas. Mejoras tecnológicas en estructura, escalabilidad y performance de negocio con implementación de UX-UI para adaptar el sistema a distintos dispositivos.",
-        link: "https://isfdyt20.edu.ar/",
-    },
-    {
-        date: "2022 - 2023",
-        company: "Wynges S.A.S",
-        description:
-            "Análisis de requerimientos y necesidades de clientes para ofrecer soluciones eficientes. Colaboración con equipos multidisciplinarios en proyectos tecnológicos. Gestión de solicitudes e incidencias técnicas (software), priorizando la resolución rápida. Comunicación clara y efectiva con clientes y colegas.",
-        link: "https://wynges.com/",
-    },
-];
----
-
-<ol class="relative border-s border-gray-700 dark:border-white">
-    {
-        EXPERIENCIE.map((experiencie) => (
-            <li class="ml-7 mb-10 ms-4 text-pretty">
-                <div class="absolute w-3 h-3 bg-gray-700 dark:bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-white">
-                </div>
-                <ExperienceItem {...experiencie} />
-            </li>
-        ))
-    }
+<ol
+  class="relative border-s border-gray-700 dark:border-white"
+  id="experience-list"
+>
 </ol>
+<script>
+  async function render() {
+    const experienceList = document.getElementById("experience-list");
+    const data = (
+      await import(`../utils/data.json`, {
+        assert: { type: "json" },
+      })
+    ).default;
+    const lang = document.documentElement.lang.toUpperCase();
+    const EXPERIENCIE = data[lang].experience;
+    experienceList.innerHTML = "";
+    EXPERIENCIE.forEach((experiencie) => {
+      const li = document.createElement("li");
+      li.className = "ml-7 mb-10 ms-4 text-pretty";
+      const div = document.createElement("div");
+      div.className =
+        "absolute w-3 h-3 bg-gray-700 dark:bg-white rounded-full mt-1.5 -start-1.5 border border-white dark:border-white";
+      li.appendChild(div);
+      const experienceItem = document.createElement("experience-item");
+      const date = document.createElement("time");
+      date.className = "mb-1 text-sm font-normal leading-none dark:text-white";
+      date.textContent = experiencie.date;
+      experienceItem.appendChild(date);
+      const company = document.createElement("h3");
+      company.className = "text-lg font-semibold text-cyan-500";
+      company.textContent = experiencie.company;
+      experienceItem.appendChild(company);
+      const description = document.createElement("p");
+      description.className = "mb-4 text-base font-normal dark:text-white";
+      description.textContent = experiencie.description;
+      experienceItem.appendChild(description);
+      if (experiencie.link) {
+        const link = document.createElement("a");
+        link.href = experiencie.link;
+        link.className =
+          "inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:focus:ring-gray-700";
+        link.target = "_blank";
+        link.textContent = data[lang].button;
+        link.innerHTML = `${link.textContent} <svg
+                    class="w-3 h-3 ms-2 rtl:rotate-180 mt-0.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                    >
+                    </path>
+                </svg>`;
+        experienceItem.appendChild(link);
+      }
+      li.appendChild(experienceItem);
+      experienceList.appendChild(li);
+    });
+  }
+
+  render();
+  window.addEventListener("language-change", render);
+</script>

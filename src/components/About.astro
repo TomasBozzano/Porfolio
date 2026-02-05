@@ -1,23 +1,16 @@
 ---
 import User from "./icons/User.astro";
-let years = new Date().getFullYear();
-const init = 2018;
-let timeLine = years - init;
 ---
 
 <article
     id="about"
     class="w-full mx-auto max-w-[60ch] px-6 content-center container py-20"
 >
-    <h2
-        class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
-    >
+    <div class="flex flex-row pb-5 gap-x-3">
         <User class="size-10" />
-        Sobre mí
-    </h2>
-    <article
-        class="flex flex-col items-center justify-center gap-8 text-gray-500 dark:text-gray-400"
-    >
+        <h2 class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white" id="about-me"></h2>
+    </div>
+    <article class="flex flex-col items-center justify-center gap-8 text-gray-500 dark:text-gray-400">
         <img
             width="200"
             height="200"
@@ -27,20 +20,45 @@ let timeLine = years - init;
             style="object-position: 50% 50%"
         />
         <div class="py-2 px-6 font-mono text-pretty">
-            <p> Me encanta hacer deportes, leer y aprender cosas nuevas. </p>
-            <p class="py-2">
-                Hace
-                <strong class="text-cyan-300 dark:text-cyan-200"
-                    >{timeLine} años</strong
-                > descubrí mi pasión por la programación. Desde entonces, no he dejado
-                de aprender y desafiarme con proyectos propios que me permiten fortalecer
-                mi lógica y el diseño de estructuras.
-            </p>
-            <p>
-                Me considero una persona comprometida, proactiva y siempre en
-                búsqueda de nuevos desafíos que me permitan seguir creciendo
-                como profesional y como persona.
-            </p>
+            <p id="first"></p>
+            <p id="second" class="py-2"></p>
+            <p id="third"></p>
         </div>
     </article>
 </article>
+<script>
+    async function render(){
+        const lang = document.documentElement.lang.toUpperCase();
+
+        const data = (
+            await import(`../utils/data.json`, {
+            assert: { type: "json" },
+            })
+        ).default;
+
+        let aboutMe = document.querySelector("#about-me");
+        let first = document.querySelector("#first");
+        let second = document.querySelector("#second");
+        let third = document.querySelector("#third");
+        let timeLine = new Date().getFullYear() - 2018;
+
+        aboutMe.innerHTML= "";
+        first.innerHTML= "";
+        second.innerHTML= "";
+        third.innerHTML= "";
+
+        aboutMe.textContent = data[lang].titles.about;
+        first.textContent = data[lang].about.first;
+       
+        const strongWord = document.createElement("strong");
+        strongWord.className = "text-cyan-300 dark:text-cyan-200";
+        strongWord.textContent = `${timeLine}`;
+        second.appendChild(strongWord);
+
+        second.appendChild(document.createTextNode(data[lang].about.second));
+        third.textContent = data[lang].about.third;
+    }
+
+    render();
+    window.addEventListener("language-change", render);
+</script>

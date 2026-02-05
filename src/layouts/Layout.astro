@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro'
+
 interface Props {
 	title: string;
 	description: string;
@@ -22,11 +23,29 @@ const { title, description } = Astro.props;
 	<body class=" dark:bg-slate-900">
 		<Header />
 		<slot />
-		<footer class="py-12 text-center dark:text-white">
-			© 2024 Tomgb. Casi todos los derechos reservados
+		<footer class="py-12 text-center dark:text-white" id="footer">
 		</footer>
 	</body>
 </html>
+<script>
+async function render() {
+    const footer = document.getElementById("footer");
+
+    const data = (
+      await import(`../utils/data.json`, {
+        assert: { type: "json" },
+      })
+    ).default;
+
+    const lang = document.documentElement.lang.toUpperCase();
+
+    footer.textContent = data[lang].footer;
+  }
+
+  render();
+  window.addEventListener("language-change", render);
+
+</script>
 <style is:global>
 	:root {
 		color-scheme: light dark;

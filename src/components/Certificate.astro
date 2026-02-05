@@ -1,58 +1,59 @@
 ---
-import Code from './icons/Code.astro'
-import View from './icons/View.astro'
-import Github from './icons/Github.astro'
-import Html from './icons/Html.astro'
-import Css from './icons/Css.astro'
-import Javascript from './icons/Javascript.astro'
-import React from './icons/React.astro'
-import NodeJs from './icons/NodeJs.astro'
-import Tailwind from './icons/Tailwind.astro'
-import Express from './icons/Express.astro'
-import Firebase from './icons/Firebase.astro'
-import Jwt from './icons/Jwt.astro'
-
+import Code from "./icons/Code.astro";
+import View from "./icons/View.astro";
+import Github from "./icons/Github.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Javascript from "./icons/Javascript.astro";
+import React from "./icons/React.astro";
+import NodeJs from "./icons/NodeJs.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Express from "./icons/Express.astro";
+import Firebase from "./icons/Firebase.astro";
+import Jwt from "./icons/Jwt.astro";
 
 const PROYECTOS = [
-    {
-        name: "Ecommerce - Talento Tech",
-        description:
-            "Desarrollo de E-commerce utilizando React, Tailwind CSS y Mockapi para la gestión de productos y usuarios. Control mediante de estados con Hooks y Zustand para manejar el entorno global.",
-        technologies: ["HTML", "Tailwind CSS", "React", "Mockapi"],
-        preview: "https://ecommerce-tech-talent.netlify.app/",
-        github: "https://github.com/TomasBozzano/E-commerce-TalentoTech"
-    },
-    {
-        name: "Api Restful - Talento Tech",
-        description:
-            "Desarrollo de API RESTful utilizando Node.js, Express, Firebase y JWT para la autenticación y autorización de usuarios. Implementación de operaciones CRUD para la gestión de productos aparte de la seguridad con tokens.",
-        technologies: ["Node.js", "Express", "Firebase", "JWT"],
-        preview: "https://api-rest-ecommerce-ten.vercel.app/",
-        github: "https://github.com/TomasBozzano/proyecto-final-ecommerce-tomas-bozzano"
-    },
-    {
-        name: "Ta Te Ti",
-        description:
-            "Desarrollo de Juego para manejar Hooks en React, aplicando Localstore para el almacenado de datos de la partida de juego.",
-        technologies: ["HTML", "CSS", "JavaScript", "React"],
-        preview: "https://ta-te-ti-omega.vercel.app/",
-        github: "https://github.com/TomasBozzano/TaTeTi"
-    },
-    {
-        name: "Calculadora",
-        description:
-            "Desarrollo de aplicación web para realizar operaciones matemáticas básicas.",
-        technologies: ["HTML", "CSS", "JavaScript", "React"],
-        preview: "https://calculadoratg.onrender.com/",
-        github: "https://github.com/TomasBozzano/Calculadora-useState"
-    },
-    {
-        name: "E-commerce",
-        description: "Desarrollo de E-commerce con Vanilla JavaScript, HTML y CSS. Aplicando conceptos de Responsive Design y accesibilidad.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        preview: "https://tomasbozzano.github.io/Front-End/",
-        github: "https://github.com/TomasBozzano/Front-End"
-    },
+  {
+    name: "Ecommerce - Talento Tech",
+    description:
+      "Desarrollo de E-commerce utilizando React, Tailwind CSS y Mockapi para la gestión de productos y usuarios. Control mediante de estados con Hooks y Zustand para manejar el entorno global.",
+    technologies: ["HTML", "Tailwind CSS", "React", "Mockapi"],
+    preview: "https://ecommerce-tech-talent.netlify.app/",
+    github: "https://github.com/TomasBozzano/E-commerce-TalentoTech",
+  },
+  {
+    name: "Api Restful - Talento Tech",
+    description:
+      "Desarrollo de API RESTful utilizando Node.js, Express, Firebase y JWT para la autenticación y autorización de usuarios. Implementación de operaciones CRUD para la gestión de productos aparte de la seguridad con tokens.",
+    technologies: ["Node.js", "Express", "Firebase", "JWT"],
+    preview: "https://api-rest-ecommerce-ten.vercel.app/",
+    github:
+      "https://github.com/TomasBozzano/proyecto-final-ecommerce-tomas-bozzano",
+  },
+  {
+    name: "Ta Te Ti",
+    description:
+      "Desarrollo de Juego para manejar Hooks en React, aplicando Localstore para el almacenado de datos de la partida de juego.",
+    technologies: ["HTML", "CSS", "JavaScript", "React"],
+    preview: "https://ta-te-ti-omega.vercel.app/",
+    github: "https://github.com/TomasBozzano/TaTeTi",
+  },
+  {
+    name: "Calculadora",
+    description:
+      "Desarrollo de aplicación web para realizar operaciones matemáticas básicas.",
+    technologies: ["HTML", "CSS", "JavaScript", "React"],
+    preview: "https://calculadoratg.onrender.com/",
+    github: "https://github.com/TomasBozzano/Calculadora-useState",
+  },
+  {
+    name: "E-commerce",
+    description:
+      "Desarrollo de E-commerce con Vanilla JavaScript, HTML y CSS. Aplicando conceptos de Responsive Design y accesibilidad.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    preview: "https://tomasbozzano.github.io/Front-End/",
+    github: "https://github.com/TomasBozzano/Front-End",
+  },
 ];
 
 /**
@@ -67,67 +68,100 @@ const PROYECTOS = [
     }
     ---
  */
-
 ---
-<article id="proyectos" class="w-full mx-auto max-w-[60ch] px-6 content-center py-20">
-    <h2 class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white">
-        <Code class="size-10" />
-        Proyectos
-    </h2>
-    <ol class="">
-        {
-            PROYECTOS.map((proyecto) => {
-                return (
-                    <li class="ml-7 mb-10 ms-4 text-pretty">
-                        <h3
-                            class="text-lg font-semibold text-cyan-500"
-                        >
-                            {proyecto.name}
-                        </h3>
-                        <p class="mb-4 text-base font-normal dark:text-white">
-                            {proyecto.description}
-                        </p>
-                        <ul class="flex flex-row mb-2 gap-x-2 items-center py-2">
-                            {
-                                proyecto.technologies.map((tech) => {
-                                    return (
-                                        <li>
-                                            <span class="flex gap-x-2 text-black px-1">
-                                                {tech === "HTML" ? <Html class="size-6" name="HTML" /> : ""}
-                                                {tech === "CSS" ? <Css class="size-6" /> : ""}
-                                                {tech === "JavaScript" ? <Javascript class="size-6" /> : ""}
-                                                {tech === "React" ? <React class="size-6" /> : ""}
-                                                {tech === "Node.js" ? <NodeJs class="size-6" /> : ""}
-                                                {tech === "Tailwind CSS" ? <Tailwind class="size-6" /> : ""}
-                                                {tech === "Express" ? <Express class="size-6" /> : ""}
-                                                {tech === "Firebase" ? <Firebase class="size-6" /> : ""}
-                                                {tech === "JWT" ? <Jwt class="size-6" /> : ""}
-                                                <span class="dark:text-white text-white">{tech}</span>
-                                            </span>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
-                        <a
-                            href={proyecto.preview}
-                            class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-                            target="_blank"
-                            >
-                            <View class="size-6" />
-                            Preview
-                        </a>
-                        <a
-                            href={proyecto.github}
-                            class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base   text-md group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
-                            target="_blank">
-                            <Github class="size-6" />
-                            Github
-                        </a>
-                    </li>
-                )
-            })
 
-        }
-    </ol>
+<article
+  id="proyectos"
+  class="w-full mx-auto max-w-[60ch] px-6 content-center py-20"
+>
+  <div class="flex flex-row pb-5 gap-x-3">
+    <Code class="size-10" />
+    <h2 id="proyectos-title"
+      class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
+    >
+    </h2>
+  </div>
+  <ol class="">
+    {
+      PROYECTOS.map((proyecto) => {
+        return (
+          <li class="ml-7 mb-10 ms-4 text-pretty">
+            <h3 class="text-lg font-semibold text-cyan-500">{proyecto.name}</h3>
+            <p class="mb-4 text-base font-normal dark:text-white">
+              {proyecto.description}
+            </p>
+            <ul class="flex flex-row mb-2 gap-x-2 items-center py-2">
+              {proyecto.technologies.map((tech) => {
+                return (
+                  <li>
+                    <span class="flex gap-x-2 text-black px-1">
+                      {tech === "HTML" ? (
+                        <Html class="size-6" name="HTML" />
+                      ) : (
+                        ""
+                      )}
+                      {tech === "CSS" ? <Css class="size-6" /> : ""}
+                      {tech === "JavaScript" ? (
+                        <Javascript class="size-6" />
+                      ) : (
+                        ""
+                      )}
+                      {tech === "React" ? <React class="size-6" /> : ""}
+                      {tech === "Node.js" ? <NodeJs class="size-6" /> : ""}
+                      {tech === "Tailwind CSS" ? (
+                        <Tailwind class="size-6" />
+                      ) : (
+                        ""
+                      )}
+                      {tech === "Express" ? <Express class="size-6" /> : ""}
+                      {tech === "Firebase" ? <Firebase class="size-6" /> : ""}
+                      {tech === "JWT" ? <Jwt class="size-6" /> : ""}
+                      <span class="dark:text-white text-white">{tech}</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              href={proyecto.preview}
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+              target="_blank"
+            >
+              <View class="size-6" />
+              Preview
+            </a>
+            <a
+              href={proyecto.github}
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base   text-md group max-w-fit rounded-xl text-white dark:bg-gray-100 border dark:border-gray-300  bg-gray-800 border-gray-600 dark:text-gray-700 dark:hover:text-black text-md dark:hover:bg-cyan-500 hover:bg-cyan-500  focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+              target="_blank"
+            >
+              <Github class="size-6" />
+              Github
+            </a>
+          </li>
+        );
+      })
+    }
+  </ol>
 </article>
+<script>
+    async function render(){
+
+        let title = document.querySelector("#proyectos-title");
+
+        const lang = document.documentElement.lang.toUpperCase();
+    
+        const data = (
+            await import(`../utils/data.json`, {
+            assert: { type: "json" },
+            })
+        ).default;
+    
+        console.log(data[lang].titles.projects);
+
+        title.textContent = data[lang].titles.projects;
+    }
+
+    render();
+    window.addEventListener("language-change", render);
+</script>

@@ -1,29 +1,53 @@
 ---
-import PresentationNav from "./PresentationNav.astro"
-let years = new Date().getFullYear();
-const experiencie = 2022
-let timeLine = years - experiencie;
+import PresentationNav from "./PresentationNav.astro";
 ---
-<article id="inicio" class="section py-10 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
-    <div class="flex flex-row div-center pb-5">
-        <img
-            class="rounded-full size-28 mr-5 border-y-cyan-600 border-x-cyan-700 border-8"
-            src="/picture-simple.png"
-            alt="Mi foto de perfil"
-        />
-        <h1 class="text-4xl font-bold gap-x-3 pb-5 mt-1 dark:text-white">
-            Hola, soy Tomás Bozzano
-        </h1>
-    </div>
-    <p class="max-w-[60ch] text-pretty dark:text-white">
-        Lic. en Sistemas de Información y Estudiante de
-        <span class="text-cyan-500">Licenciatura en Ciencia de datos</span>.
-        <br/>
-        <span class="text-yellow-500 text-2xl ">+{timeLine}</span> de experiencia en desarrollo de software.
-        <br/>
-        <span class="text-sky-50 text-pretty">
-            Enfocado en el diseño y cumplimiento de soluciones tecnológicas, priorizando la escalabilidad, la eficiencia y el entendimiento profundo del negocio.
-        </span>
-    </p>
-    <PresentationNav />    
+
+<article
+  id="inicio"
+  class="section py-10 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+>
+  <div class="flex flex-row div-center pb-5">
+    <img
+      class="rounded-full size-28 mr-5 border-y-cyan-600 border-x-cyan-700 border-8"
+      src="/picture-simple.png"
+      alt="Mi foto de perfil"
+    />
+    <h1
+      class="text-4xl font-bold gap-x-3 pb-5 mt-1 dark:text-white"
+      id="greeting"
+    >
+    </h1>
+  </div>
+  <p class="max-w-[60ch] text-pretty dark:text-white">
+    <span id="about" class="text-cyan-500"></span>
+    <br />
+    <span class="text-yellow-500 text-2xl" id="years"></span>
+    <span class="text-sky-50 text-pretty" id="info"></span>
+  </p>
+  <PresentationNav />
 </article>
+<script>
+  async function render() {
+    let greeting = document.getElementById("greeting");
+    let about = document.getElementById("about");
+    let info = document.getElementById("info");
+    let years = document.getElementById("years");
+
+    const data = (
+      await import(`../utils/data.json`, {
+        assert: { type: "json" },
+      })
+    ).default;
+
+    const lang = document.documentElement.lang.toUpperCase();
+
+    greeting.textContent = data[lang].hero.greeting + " " + data[lang].hero.name;
+    about.innerHTML = data[lang].hero.about;
+    info.textContent = data[lang].hero.info;
+    let convertedData = new Date().getFullYear() - 2022;
+    years.textContent = "+" + convertedData + " ";
+  }
+
+  render();
+  window.addEventListener("language-change", render);
+</script>
