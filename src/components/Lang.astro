@@ -1,0 +1,23 @@
+<div class="flex space-x-2">
+  <button
+    id="lang-toggle"
+    class="sm:block transition-colors dark:text-white hover:text-cyan-500 hover:cyan-500 dark:hover:text-cyan-500 font-semibold relative block px-2 py-2"
+  >
+    ES
+  </button>
+  <script>
+    const buttons = document.querySelectorAll("#lang-toggle");
+    buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const lang = button.textContent.trim();
+        const verify = lang === "ES" ? "EN" : "ES";
+        button.textContent = verify;
+        const selectedLang = button.textContent.trim();
+        document.documentElement.lang = selectedLang.toLowerCase();
+        localStorage.setItem("language", selectedLang.toLowerCase());
+        window.dispatchEvent(new CustomEvent("language-change"));
+      });
+    });
+  </script>
+</div>
