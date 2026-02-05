@@ -1,0 +1,304 @@
+{
+    "ES": {
+        "nav": [
+            {
+                "title": "Inicio",
+                "label": "inicio",
+                "url": "/#inicio"
+            },
+            {
+                "title": "Experiencia",
+                "label": "experiencia",
+                "url": "/#experiencia"
+            },
+            {
+                "title": "Proyectos",
+                "label": "proyectos",
+                "url": "/#proyectos"
+            },
+            {
+                "title": "Sobre mí",
+                "label": "sobre-mi",
+                "url": "/#about"
+            }
+        ],
+        "hero": {
+            "greeting": "Hola, soy",
+            "name": "Tomás Bozzano",
+            "about": "Lic. en Sistemas de Información.",
+            "info": " años de experiencia en desarrollo de software. Enfocado en el diseño y cumplimiento de soluciones tecnológicas, priorizando la escalabilidad, la eficiencia y el entendimiento profundo del negocio."
+        },
+        "titles": {
+            "experience": "Experiencia",
+            "habilities": "Tecnologías",
+            "projects": "Proyectos",
+            "about": "Sobre Mí"
+        },
+        "experience": [
+            {
+                "date": "2025 - Actualidad",
+                "company": "Municipalidad de Vicente López",
+                "description": "Participación en diseño, desarrollo e implementación de aplicaciones web orientadas a la gestión de datos y automatización de procesos. Entorno FullStack, con foco en la calidad del código, rendimiento y UX.",
+                "link": "https://www.vicentelopez.gov.ar/"
+            },
+            {
+                "date": "2024 - 2025",
+                "company": "Rusoft",
+                "description": "Desarrollo de Sistema de Fidelización de Clientes enfocado en soluciones escalables, seguras y eficientes, con una comunicación ágil a través de una plataforma de seguimiento continuo de tareas y estados del proyecto.",
+                "link": "http://rusoft.com.ar/"
+            },
+            {
+                "date": "2023 - 2024",
+                "company": "Toda Linda Ropa",
+                "description": "Análisis y creación de ERP para tienda de ropa. Implementación de requerimientos de negocio y buenas prácticas, integrando la información a través de procedimientos almacenados.",
+                "link": "https://www.instagram.com/todalindavyg/"
+            },
+            {
+                "date": "2023 -2024",
+                "company": "ISFDyT N°20",
+                "description": "Cumplimiento de soluciones de software alineadas a especificaciones y mejores prácticas. Mejoras tecnológicas en estructura, escalabilidad y performance de negocio con implementación de UX-UI para adaptar el sistema a distintos dispositivos.",
+                "link": "https://isfdyt20.edu.ar/"
+            },
+            {
+                "date": "2022 - 2023",
+                "company": "Wynges S.A.S",
+                "description": "Análisis de requerimientos y necesidades de clientes para ofrecer soluciones eficientes. Colaboración con equipos multidisciplinarios en proyectos tecnológicos. Gestión de solicitudes e incidencias técnicas (software), priorizando la resolución rápida. Comunicación clara y efectiva con clientes y colegas.",
+                "link": "https://wynges.com/"
+            }
+        ],
+        "button": "Sobre la empresa",
+        "projects": [
+            {
+                "name": "Ecommerce - Talento Tech",
+                "description": "Desarrollo de E-commerce se baso en entender el negocio y las necesidades del usuario final. La problemática principal fue crear una plataforma que permita a los usuarios navegar por productos, agregarlos al carrito y realizar compras de manera segura y eficiente, todo mientras se mantiene una experiencia de usuario atractiva y funcional.",
+                "technologies": [
+                    "HTML",
+                    "Tailwind CSS",
+                    "React",
+                    "Mockapi"
+                ],
+                "preview": "https://ecommerce-tech-talent.netlify.app/",
+                "github": "https://github.com/TomasBozzano/E-commerce-TalentoTech"
+            },
+            {
+                "name": "Api Restful - Talento Tech",
+                "description": "Desarrollo de API RESTful. La implementación de este proyecto se centró en la creación de endpoints seguros y eficientes para la gestión de datos, utilizando autenticación basada en JWT y almacenamiento de datos en Firebase.",
+                "technologies": [
+                    "Node.js",
+                    "Express",
+                    "Firebase",
+                    "JWT"
+                ],
+                "preview": "https://api-rest-ecommerce-ten.vercel.app/",
+                "github": "https://github.com/TomasBozzano/proyecto-final-ecommerce-tomas-bozzano"
+            },
+            {
+                "name": "Ta Te Ti",
+                "description": "El desarrollo del Juego conlleva el entendimiento de la lógica de programación y la gestión del estado en React. La problemática principal fue implementar las reglas del juego, gestionar los turnos de los jugadores y determinar el ganador o empate, todo mientras se actualiza la interfaz de usuario de manera eficiente.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React"
+                ],
+                "preview": "https://ta-te-ti-omega.vercel.app/",
+                "github": "https://github.com/TomasBozzano/TaTeTi"
+            },
+            {
+                "name": "Calculadora",
+                "description": "Este proyecto es una aplicación para entender el uso de React con sus estados y hooks. La problematica principal fue crear una calculadora funcional que permita realizar operaciones básicas como suma, resta, multiplicación y división, manejando correctamente la entrada del usuario y actualizando la pantalla de resultados en tiempo real.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React"
+                ],
+                "preview": "https://calculadoratg.onrender.com/",
+                "github": "https://github.com/TomasBozzano/Calculadora-useState"
+            },
+            {
+                "name": "E-commerce",
+                "description": "Desarrollo de E-commerce con Vanilla JavaScript. Este proyecto aplica conceptos de Responsive Design y accesibilidad, entendiendo la importancia de crear interfaces que se adapten a diferentes dispositivos y sean accesibles para todos los usuarios.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "preview": "https://tomasbozzano.github.io/Front-End/",
+                "github": "https://github.com/TomasBozzano/Front-End"
+            }
+        ],
+        "techStack": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Java",
+            "React",
+            "Node.js",
+            "Express",
+            ".env",
+            "GitHub",
+            "Astro",
+            "Tailwind CSS",
+            "Swagger",
+            "GitLab"
+        ],
+        "about": {
+            "first": "Me encanta hacer deportes, leer y aprender cosas nuevas. Hace",
+            "second": " años descubrí mi pasión por la programación. Desde entonces, no he dejado de aprender y desafiarme con proyectos propios que me permiten fortalecer mi lógica y el diseño de estructuras. ",
+            "third": "Me considero una persona comprometida, proactiva y siempre en búsqueda de nuevos desafíos que me permitan seguir creciendo como profesional y como persona."
+        },
+        "footer": "Hecho con ❤️ por Tomás Bozzano"
+    },
+    "EN": {
+        "nav": [
+            {
+                "title": "Home",
+                "label": "home",
+                "url": "/#inicio"
+            },
+            {
+                "title": "Experience",
+                "label": "experience",
+                "url": "/#experiencia"
+            },
+            {
+                "title": "Projects",
+                "label": "projects",
+                "url": "/#proyectos"
+            },
+            {
+                "title": "About Me",
+                "label": "about-me",
+                "url": "/#about"
+            }
+        ],
+        "hero": {
+            "greeting": "Hi, I'm",
+            "name": "Tomás Bozzano",
+            "about": "Systems Engineer.",
+            "info": " years of experience in software development. Focused on the design and fulfillment of technological solutions, prioritizing scalability, efficiency, and a deep understanding of the business."
+        },
+        "titles": {
+            "experience": "Experience",
+            "habilities": "Technologies",
+            "projects": "Projects",
+            "about": "About Me"
+        },
+        "experience": [
+            {
+                "date": "2025 - Present",
+                "company": "Municipality of Vicente López",
+                "description": "Participation in the design, development, and implementation of web applications aimed at data management and process automation. FullStack environment, focusing on code quality, performance, and UX.",
+                "link": "https://www.vicentelopez.gov.ar/"
+            },
+            {
+                "date": "2024 - 2025",
+                "company": "Rusoft",
+                "description": "Development of a Customer Loyalty System focused on scalable, secure, and efficient solutions, with agile communication through a continuous task tracking platform and project status.",
+                "link": "http://rusoft.com.ar/"
+            },
+            {
+                "date": "2023 - 2024",
+                "company": "Toda Linda Ropa",
+                "description": "Analysis and creation of ERP for clothing store. Implementation of business requirements and best practices, integrating information through stored procedures.",
+                "link": "https://www.instagram.com/todalindavyg/"
+            },
+            {
+                "date": "2023 - 2024",
+                "company": "ISFDyT N°20",
+                "description": "Fulfillment of software solutions aligned with specifications and best practices. Technological improvements in structure, scalability, and business performance with UX-UI implementation to adapt the system to different devices.",
+                "link": "https://isfdyt20.edu.ar/"
+            },
+            {
+                "date": "2022 - 2023",
+                "company": "Wynges S.A.S",
+                "description": "Analysis of client requirements and needs to offer efficient solutions. Collaboration with multidisciplinary teams on technological projects. Management of technical requests and incidents (software), prioritizing quick resolution. Clear and effective communication with clients and colleagues.",
+                "link": "https://wynges.com/"
+            }
+        ],
+        "button": "About the company",
+        "projects": [
+            {
+                "name": "Ecommerce - Talento Tech",
+                "description": "Development of E-commerce was based on understanding the business and the needs of the end user. The main challenge was to create a platform that allows users to browse products, add them to the cart, and make purchases securely and efficiently, while maintaining an attractive and functional user experience.",
+                "technologies": [
+                    "HTML",
+                    "Tailwind CSS",
+                    "React",
+                    "Mockapi"
+                ],
+                "preview": "https://ecommerce-tech-talent.netlify.app/",
+                "github": "https://github.com/TomasBozzano/E-commerce-TalentoTech"
+            },
+            {
+                "name": "Api Restful - Talento Tech",
+                "description": "Development of RESTful API. The implementation of this project focused on creating secure and efficient endpoints for data management, using JWT-based authentication and data storage in Firebase.",
+                "technologies": [
+                    "Node.js",
+                    "Express",
+                    "Firebase",
+                    "JWT"
+                ],
+                "preview": "https://api-rest-ecommerce-ten.vercel.app/",
+                "github": "https://github.com/TomasBozzano/proyecto-final-ecommerce-tomas-bozzano"
+            },
+            {
+                "name": "Tic Tac Toe",
+                "description": "The development of the Game involves understanding programming logic and state management in React. The main challenge was to implement the game rules, manage player turns, and determine the winner or draw, while efficiently updating the user interface.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React"
+                ],
+                "preview": "https://ta-te-ti-omega.vercel.app/",
+                "github": "https://github.com/TomasBozzano/TaTeTi"
+            },
+            {
+                "name": "Calculator",
+                "description": "This project is an application to understand the use of React with its states and hooks. The main challenge was to create a functional calculator that allows basic operations such as addition, subtraction, multiplication, and division, correctly handling user input and updating the results screen in real-time.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React"
+                ],
+                "preview": "https://calculadoratg.onrender.com/",
+                "github": "https://github.com/TomasBozzano/Calculadora-useState"
+            },
+            {
+                "name": "E-commerce",
+                "description": "Development of E-commerce with Vanilla JavaScript. This project applies concepts of Responsive Design and accessibility, understanding the importance of creating interfaces that adapt to different devices and are accessible to all users.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "preview": "https://tomasbozzano.github.io/Front-End/",
+                "github": "https://github.com/TomasBozzano/Front-End"
+            }
+        ],
+        "techStack": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Java",
+            "React",
+            "Node.js",
+            "Express",
+            ".env",
+            "GitHub",
+            "Astro",
+            "Tailwind CSS",
+            "Swagger",
+            "GitLab"
+        ],
+        "about": {
+            "first": "I love doing sports, reading, and learning new things. ",
+            "second": " years ago I discovered my passion for programming. Since then, I have not stopped learning and challenging myself with my own projects that allow me to strengthen my logic and structure design.",
+            "third": " I consider myself a committed, proactive person, always seeking new challenges that allow me to continue growing as a professional and as a person."
+        },
+        "footer": "Made with ❤️ by Tomás Bozzano"
+    }
+}
