@@ -67,16 +67,26 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     const navContainer = document.querySelector("#lang-container");
 
-    navContainer.innerHTML = "";
+    navContainer.classList.remove("lang-fade-in");
+    navContainer.classList.add("lang-fade-out");
 
-    navItems.forEach((item) => {
-      const a = document.createElement("a");
-      a.href = item.url;
-      a.textContent = item.title;
-      a.setAttribute("aria-label", item.label);
-      a.className = "sm:block transition-colors dark:text-white hover:text-cyan-500 hover:cyan-500 dark:hover:text-cyan-500 font-semibold relative block px-2 py-2";
-      navContainer.appendChild(a);
-    });
+    window.setTimeout(() => {
+      navContainer.innerHTML = "";
+
+      navItems.forEach((item) => {
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.textContent = item.title;
+        a.setAttribute("aria-label", item.label);
+        a.className = "sm:block transition-colors dark:text-white hover:text-cyan-500 hover:cyan-500 dark:hover:text-cyan-500 font-semibold relative block px-2 py-2";
+        navContainer.appendChild(a);
+      });
+
+      requestAnimationFrame(() => {
+        navContainer.classList.remove("lang-fade-out");
+        navContainer.classList.add("lang-fade-in");
+      });
+    }, 180);
   }
 
   renderNav();
@@ -93,5 +103,19 @@ import ThemeToggle from "./ThemeToggle.astro";
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
     }
+  }
+
+  #lang-container {
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  #lang-container.lang-fade-out {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  #lang-container.lang-fade-in {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>

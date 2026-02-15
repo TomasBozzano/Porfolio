@@ -13,6 +13,8 @@ import AstroI from "./icons/Astro-img.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Swagger from "./icons/Swagger.astro";
 import Java from "./icons/Java.astro";
+import JWT from "./icons/Jwt.astro";
+import Firebase from "./icons/Firebase.astro";
 
 const TECHNOLOGIES = [
   "HTML",
@@ -28,6 +30,8 @@ const TECHNOLOGIES = [
   "Tailwind",
   "Swagger",
   "GitLab",
+  "JWT",
+  "Firebase",
   // Add more technologies as needed
 ];
 ---
@@ -37,10 +41,11 @@ const TECHNOLOGIES = [
     <Code class="size-10" />
     <h2
       class="text-3xl font-bold gap-x-3 pb-5 inline-flex items-center dark:text-white"
-      id="habilities">
+      id="habilities"
+    >
     </h2>
   </div>
-  <div class="w-full mx-auto max-w-[60ch] ml-4 flex flex-wrap gap-6">
+  <div class="w-full mx-auto max-w-[60ch] ml-2 flex flex-wrap gap-6 max-md:gap-2 max-md:justify-center">
     {
       //traer todas las imagenes de icons
       //y mostrarlas como una lista de iconos
@@ -53,16 +58,8 @@ const TECHNOLOGIES = [
           {tech === "HTML" ? <HtmlI class="size-20" name="HTML" /> : ""}
           {tech === "Astro" ? <AstroI class="size-20" name="Astro" /> : ""}
           {tech === "CSS" ? <CssI class="size-20" name="CSS" /> : ""}
-          {tech === "Tailwind" ? (
-            <Tailwind class="size-20" name="Tailwind CSS" />
-          ) : (
-            ""
-          )}
-          {tech === "JavaScript" ? (
-            <JavascriptI class="size-20" name="JavaScript" />
-          ) : (
-            ""
-          )}
+          {tech === "Tailwind" ? (<Tailwind class="size-20" name="Tailwind CSS" />) : ("")}
+          {tech === "JavaScript" ? (<JavascriptI class="size-20" name="JavaScript" />) : ("")}
           {tech === "Java" ? <Java class="size-20" name="Java" /> : ""}
           {tech === "React" ? <ReactI class="size-20" name="React" /> : ""}
           {tech === "Node.js" ? <NodeJs class="size-20" name="Node.js" /> : ""}
@@ -71,6 +68,8 @@ const TECHNOLOGIES = [
           {tech === "Express" ? <Express class="size-20" name="Express" /> : ""}
           {tech === "GitHub" ? <Git class="size-20" name="GitHub" /> : ""}
           {tech === "GitLab" ? <GitLab class="size-20" name="GitLab" /> : ""}
+          {tech === "JWT" ? <JWT class="size-20" name="JWT" /> : ""}
+          {tech === "Firebase" ? <Firebase class="size-20" name="Firebase" /> : ""}
           {tech}
         </span>
       ))

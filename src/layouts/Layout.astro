@@ -20,15 +20,18 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class=" dark:bg-slate-900">
-		<Header />
-		<slot />
-		<footer class="py-12 text-center dark:text-white" id="footer">
-		</footer>
-	</body>
+  <body class=" dark:bg-slate-900">
+    <div id="page-root">
+      <Header />
+      <slot />
+      <footer class="py-12 text-center dark:text-white" id="footer">
+      </footer>
+    </div>
+    <div id="lang-transition" aria-hidden="true"></div>
+  </body>
 </html>
 <script>
-async function render() {
+  async function render() {
     const footer = document.getElementById("footer");
 
     const data = (
@@ -42,8 +45,19 @@ async function render() {
     footer.textContent = data[lang].footer;
   }
 
+  function runPageTransition() {
+    const body = document.body;
+    body.classList.add("lang-transition");
+    window.setTimeout(() => {
+      body.classList.remove("lang-transition");
+    }, 260);
+  }
+
   render();
-  window.addEventListener("language-change", render);
+  window.addEventListener("language-change", () => {
+    runPageTransition();
+    render();
+  });
 
 </script>
 <style is:global>
@@ -53,10 +67,37 @@ async function render() {
 	body{
 		scroll-behavior: smooth;
 	}
+
+  #page-root {
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  body.lang-transition #page-root {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  #lang-transition {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  body.lang-transition #lang-transition {
+    opacity: 1;
+  }
+
 	@media (prefers-reduced-motion: reduce) {
 		body {
 			scroll-behavior: auto;
 		}
+    #page-root,
+    #lang-transition {
+      transition: none;
+    }
 	}
 	@media (prefers-color-scheme: dark) {
         body {
