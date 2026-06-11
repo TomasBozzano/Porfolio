@@ -74,6 +74,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       navContainer.innerHTML = "";
 
       navItems.forEach((item) => {
+        if(item.url == null) return;
         const a = document.createElement("a");
         a.href = item.url;
         a.textContent = item.title;

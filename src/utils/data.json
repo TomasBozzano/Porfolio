@@ -4,22 +4,22 @@
             {
                 "title": "Inicio",
                 "label": "inicio",
-                "url": "/#inicio"
+                "url": "#inicio"
             },
             {
                 "title": "Experiencia",
                 "label": "experiencia",
-                "url": "/#experiencia"
+                "url": "#experiencia"
             },
             {
                 "title": "Proyectos",
                 "label": "proyectos",
-                "url": "/#proyectos"
+                "url": "#proyectos"
             },
             {
                 "title": "Sobre mí",
                 "label": "sobre-mi",
-                "url": "/#about"
+                "url": "#about"
             }
         ],
         "hero": {
@@ -162,22 +162,22 @@
             {
                 "title": "Home",
                 "label": "home",
-                "url": "/#inicio"
+                "url": "#inicio"
             },
             {
                 "title": "Experience",
                 "label": "experience",
-                "url": "/#experiencia"
+                "url": "#experiencia"
             },
             {
                 "title": "Projects",
                 "label": "projects",
-                "url": "/#proyectos"
+                "url": "#proyectos"
             },
             {
                 "title": "About Me",
                 "label": "about-me",
-                "url": "/#about"
+                "url": "#about"
             }
         ],
         "hero": {

@@ -19,7 +19,7 @@ import PresentationNav from "./PresentationNav.astro";
     </h1>
   </div>
   <p class="max-w-[60ch] text-pretty dark:text-white">
-    <span id="about" class="text-cyan-500"></span>
+    <span id="me" class="text-cyan-500"></span>
     <br />
     <span class="text-yellow-500 text-2xl" id="years"></span>
     <span class="text-base font-normal text-pretty" id="info"></span>
@@ -29,7 +29,7 @@ import PresentationNav from "./PresentationNav.astro";
 <script>
   async function render() {
     let greeting = document.getElementById("greeting");
-    let about = document.getElementById("about");
+    let me = document.getElementById("me");
     let info = document.getElementById("info");
     let years = document.getElementById("years");
 
@@ -42,7 +42,7 @@ import PresentationNav from "./PresentationNav.astro";
     const lang = document.documentElement.lang.toUpperCase();
 
     greeting.textContent = data[lang].hero.greeting + " " + data[lang].hero.name;
-    about.innerHTML = data[lang].hero.about;
+    me.innerHTML = data[lang].hero.about;
     info.textContent = data[lang].hero.info;
     let convertedData = new Date().getFullYear() - 2022;
     years.textContent = "+" + convertedData + " ";
