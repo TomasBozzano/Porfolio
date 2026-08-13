@@ -36,6 +36,12 @@
         },
         "experience": [
             {
+                "date" : "Mar 2026 - Presente",
+                "company": "Ciudad del conocimiento",
+                "description":"Profesor de programación en el área de desarrollo web, brindando conocimientos y habilidades a estudiantes para que puedan desenvolverse en el mundo digital. Enfoque en la calidad del código, rendimiento y escalabilidad.",
+                "link": "https://ciudaddelconocimiento.junin.gob.ar/"
+            },
+            {
                 "date": "Nov 2025 - Presente",
                 "company": "Municipalidad de Junín",
                 "description": "Participación en desarrollo con java orientado a la gestión de contenido multimedia, optimización de consultas y mejora de la experiencia del usuario. Enfoque en la calidad del código, rendimiento y escalabilidad.",
@@ -75,6 +81,17 @@
         ],
         "button": "Sobre la empresa",
         "projects": [
+            {
+                "name": "Página Web - equipoArq",
+                "description": "Desarrollo de mejoras de la página web para empresa de arquitectura. La problemática principal fue mejoras comportamiento y visualización que permita a los usuarios conocerlos, ver los servicios ofrecidos, proyectos anteriores y contactar a la empresa de manera sencilla y atractiva con un diseño moderno y funcional adaptado a los diferentes dispositivos.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "preview": "https://equipoarq.com.ar/",
+                "github": "https://github.com/TomasBozzano/equipoarq"
+            },
             {
                 "name": "Ecommerce - Talento Tech",
                 "description": "Desarrollo de E-commerce se baso en entender el negocio y las necesidades del usuario final. La problemática principal fue crear una plataforma que permita a los usuarios navegar por productos, agregarlos al carrito y realizar compras de manera segura y eficiente, todo mientras se mantiene una experiencia de usuario atractiva y funcional.",
@@ -194,6 +211,12 @@
         },
         "experience": [
             {
+                "date" : "Mar 2026 - Present",
+                "company": "Ciudad del conocimiento",
+                "description":"Programming teacher in the web development area, providing knowledge and skills to students so that they can perform in the digital world. Focus on code quality, performance and scalability.",
+                "link": "https://ciudaddelconocimiento.junin.gob.ar/"
+            },
+            {
                 "date": "Nov 2025 - Present",
                 "company": "Municipality of Junín",
                 "description": "Participation in development with java oriented to multimedia content management, query optimization and user experience improvement. Focus on code quality, performance and scalability.",
@@ -233,6 +256,17 @@
         ],
         "button": "About the company",
         "projects": [
+            {
+                "name": "Website - equipoArq",
+                "description": "Development of website improvements for an architecture company. The main challenge was to improve behavior and visualization that allows users to get to know them, see the services offered, previous projects, and contact the company in a simple and attractive way with a modern and functional design adapted to different devices.",
+                "technologies": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "preview": "https://equipoarq.com.ar/",
+                "github": "https://github.com/TomasBozzano/equipoarq"
+            },
             {
                 "name": "Ecommerce - Talento Tech",
                 "description": "Development of E-commerce was based on understanding the business and the needs of the end user. The main challenge was to create a platform that allows users to browse products, add them to the cart, and make purchases securely and efficiently, while maintaining an attractive and functional user experience.",

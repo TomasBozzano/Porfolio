@@ -1,5 +1,7 @@
 ---
 import Code from "./icons/Code.astro";
+import data from "../utils/data.json";
+import { techIcons } from "../utils/icons.js";
 ---
 
 <article
@@ -14,21 +16,18 @@ import Code from "./icons/Code.astro";
     >
     </h2>
   </div>
-  <ol id="proyectos-list" class="w-full mx-auto max-w-[60ch] content-center container"></ol>
+  <ol
+    id="proyectos-list"
+    class="w-full mx-auto max-w-[60ch] content-center container"
+  >
+  </ol>
 </article>
-<script>
-  import { techIcons } from "../utils/icons.js";
-  
-  const data = (
-    await import(`../utils/data.json`, {
-      assert: { type: "json" },
-    })
-  ).default;
+<script define:vars={{ data, techIcons }}>
 
   // Exponer función globalmente para uso en innerHTML
   window.getTechIcon = (techName) => techIcons[techName] || "";
 
-  async function render() {
+  function render() {
     let title = document.querySelector("#proyectos-title");
     const lang = document.documentElement.lang.toUpperCase();
     title.textContent = data[lang].titles.projects;
@@ -37,8 +36,10 @@ import Code from "./icons/Code.astro";
   }
 
   function changeInfo(projects) {
-    const ol = document.querySelectorAll("#proyectos-list");
-    
+    const ol = document.querySelectorAll(
+      "#proyectos-list",
+    );
+
     ol.forEach((o) => {
       o.innerHTML = "";
     });

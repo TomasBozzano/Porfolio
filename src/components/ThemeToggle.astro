@@ -5,7 +5,7 @@ import Sun from "./icons/Sun.astro"
 <div class="relative ml-1 mr-1 flex items-center space-x-2">
   <button
     id="theme-toggle-btn"
-    class="appearance-none border-none flex hover:scale-125 transition"
+    class="appearance-none border-none flex hover:scale-125 transition hover:text-yellow-500"
   >
     <Sun class="theme-toggle-icon" />
   </button>
@@ -31,7 +31,7 @@ import Sun from "./icons/Sun.astro"
 </style>
 
 <script is:inline>
-  darkMode = document.getElementById("theme-toggle-btn")
+  const darkMode = document.getElementById("theme-toggle-btn")
   darkMode.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark")
    });

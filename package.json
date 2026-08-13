@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,11 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.6",
-    "@astrojs/tailwind": "6.0.2",
-    "astro": "5.17.1",
-    "tailwind": "4.0.0",
-    "tailwindcss": "3.4.1",
-    "typescript": "5.4.3"
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "7.2.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,24 +1,29 @@
 ---
 import Lang from "./Lang.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import data from "../utils/data.json";
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-    id="main-nav">
+    class="flex px-3 text-sm font-medium rounded-full
+         text-gray-600 dark:text-gray-200
+         justify-center items-center"
+    id="main-nav"
+  >
     <div id="lang-container" class="flex"></div>
     <ThemeToggle />
     <Lang />
   </nav>
 </header>
-<script>
+<script define:vars={{ data }}>
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
-    const callback = (entries: any[]) => {
+    const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
@@ -54,16 +59,18 @@ import ThemeToggle from "./ThemeToggle.astro";
     };
   });
 
-  async function renderNav() {
+  const nav = document.getElementById("main-nav");
+
+  if (nav) {
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  }
+
+  function renderNav() {
     const lang = document.documentElement.lang.toUpperCase();
 
-    const navData = (
-      await import(`../utils/data.json`, {
-        assert: { type: "json" },
-      })
-    ).default;
-
-    const navItems = navData[lang].nav;
+    const navItems = data[lang].nav;
 
     const navContainer = document.querySelector("#lang-container");
 
@@ -74,12 +81,13 @@ import ThemeToggle from "./ThemeToggle.astro";
       navContainer.innerHTML = "";
 
       navItems.forEach((item) => {
-        if(item.url == null) return;
+        if (item.url == null) return;
         const a = document.createElement("a");
         a.href = item.url;
         a.textContent = item.title;
         a.setAttribute("aria-label", item.label);
-        a.className = "sm:block transition-colors dark:text-white hover:text-cyan-500 hover:cyan-500 dark:hover:text-cyan-500 font-semibold relative block px-2 py-2";
+        a.className =
+          "sm:block transition-colors dark:text-white hover:text-cyan-500 hover:cyan-500 dark:hover:text-cyan-500 font-semibold relative block px-2 py-2";
         navContainer.appendChild(a);
       });
 
@@ -94,29 +102,21 @@ import ThemeToggle from "./ThemeToggle.astro";
   window.addEventListener("language-change", renderNav);
 </script>
 <style>
-  nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
+  #main-nav {
+    transition:
+      background-color 200ms ease,
+      box-shadow 200ms ease,
+      backdrop-filter 200ms ease;
   }
 
-  @keyframes nav-shadown {
-    to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
-    }
+  #main-nav.scrolled {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    backdrop-filter: blur(12px);
+    background-color: rgb(0, 184, 219, 0.3);
+    border: 1px solid rgb(255 255 255 / 0.1);
   }
 
-  #lang-container {
-    transition: opacity 180ms ease, transform 180ms ease;
-  }
-
-  #lang-container.lang-fade-out {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-
-  #lang-container.lang-fade-in {
-    opacity: 1;
-    transform: translateY(0);
+  :global(.dark) #main-nav.scrolled {
+    background-color: rgb(0, 184, 219, 0.3);
   }
 </style>

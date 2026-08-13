@@ -1,16 +1,17 @@
+---
+import data from "../utils/data.json";
+---
 <ol
   class="relative border-s border-gray-700 dark:border-white"
   id="experience-list"
 >
 </ol>
-<script>
-  async function render() {
-    const experienceList = document.getElementById("experience-list");
-    const data = (
-      await import(`../utils/data.json`, {
-        assert: { type: "json" },
-      })
-    ).default;
+<script define:vars={{ data }}>
+function render() {
+    const experienceList = document.getElementById(
+      "experience-list",
+    );
+
     const lang = document.documentElement.lang.toUpperCase();
     const EXPERIENCIE = data[lang].experience;
     experienceList.innerHTML = "";

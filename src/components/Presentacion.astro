@@ -1,5 +1,6 @@
 ---
 import PresentationNav from "./PresentationNav.astro";
+import data from "../utils/data.json";
 ---
 
 <article
@@ -26,18 +27,12 @@ import PresentationNav from "./PresentationNav.astro";
   </p>
   <PresentationNav />
 </article>
-<script>
-  async function render() {
+<script define:vars={{ data }}>
+  function render() {
     let greeting = document.getElementById("greeting");
     let me = document.getElementById("me");
     let info = document.getElementById("info");
     let years = document.getElementById("years");
-
-    const data = (
-      await import(`../utils/data.json`, {
-        assert: { type: "json" },
-      })
-    ).default;
 
     const lang = document.documentElement.lang.toUpperCase();
 

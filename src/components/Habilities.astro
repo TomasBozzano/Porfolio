@@ -1,4 +1,6 @@
 ---
+import data from "../utils/data.json";
+
 import Code from "./icons/Code.astro";
 import CssI from "./icons/Css-I.astro";
 import HtmlI from "./icons/Html-i.astro";
@@ -15,6 +17,7 @@ import Swagger from "./icons/Swagger.astro";
 import Java from "./icons/Java.astro";
 import JWT from "./icons/Jwt.astro";
 import Firebase from "./icons/Firebase.astro";
+
 
 const TECHNOLOGIES = [
   "HTML",
@@ -76,17 +79,10 @@ const TECHNOLOGIES = [
     }
   </div>
 </article>
-<script>
-  async function render() {
+<script define:vars={{ data }}>
+  function render() {
     let habilities = document.getElementById("habilities");
-
     const lang = document.documentElement.lang.toUpperCase();
-    const data = (
-      await import(`../utils/data.json`, {
-        assert: { type: "json" },
-      })
-    ).default;
-
     habilities.textContent = data[lang].titles.habilities;
   }
 
