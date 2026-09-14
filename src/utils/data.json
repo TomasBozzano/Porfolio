@@ -25,7 +25,7 @@
         "hero": {
             "greeting": "Hola, soy",
             "name": "Tomás Bozzano",
-            "about": "Lic. en Sistemas de Información.",
+            "about": "Software Engineer | Java | JavaScript | Full Stack Developer",
             "info": " años de experiencia en desarrollo de software. Enfocado en el diseño y cumplimiento de soluciones tecnológicas, priorizando la escalabilidad, la eficiencia y el entendimiento profundo del negocio."
         },
         "titles": {
@@ -49,13 +49,13 @@
             }
             ,
             {
-                "date": "Jun 2025 - Dic 2025",
+                "date": "May 2025 - Dic 2025",
                 "company": "Municipalidad de Vicente López",
                 "description": "Participación en diseño, desarrollo e implementación de aplicaciones web orientadas a la gestión de datos y automatización de procesos. Entorno FullStack, con foco en la calidad del código, rendimiento y UX.",
                 "link": "https://www.vicentelopez.gov.ar/"
             },
             {
-                "date": "Nov 2024 - Jun 2025",
+                "date": "Nov 2024 - May 2025",
                 "company": "Rusoft",
                 "description": "Desarrollo de Sistema de Fidelización de Clientes enfocado en soluciones escalables, seguras y eficientes, con una comunicación ágil a través de una plataforma de seguimiento continuo de tareas y estados del proyecto.",
                 "link": "http://rusoft.com.ar/"
@@ -224,13 +224,13 @@
             }
             ,
             {
-                "date": "Jun 2025 - Dic 2025",
+                "date": "May 2025 - Dic 2025",
                 "company": "Municipality of Vicente López",
                 "description": "Participation in the design, development, and implementation of web applications aimed at data management and process automation. FullStack environment, focusing on code quality, performance, and UX.",
                 "link": "https://www.vicentelopez.gov.ar/"
             },
             {
-                "date": "Nov 2024 - Jun 2025",
+                "date": "Nov 2024 - May 2025",
                 "company": "Rusoft",
                 "description": "Development of a Customer Loyalty System focused on scalable, secure, and efficient solutions, with agile communication through a continuous task tracking platform and project status.",
                 "link": "http://rusoft.com.ar/"
